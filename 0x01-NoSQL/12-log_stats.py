@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Nginx logs stored in MongoDB
+""" 12. Log stats
 """
 
 
@@ -7,7 +7,7 @@ from pymongo import MongoClient
 
 
 def log_stats():
-    """ Database: logs
+    """ log_stats.
     """
     client = MongoClient('mongodb://127.0.0.1:27017')
     logs_collection = client.logs.nginx

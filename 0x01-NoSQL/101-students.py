@@ -1,3 +1,19 @@
-// lists all docs with name starting with Holberton
+#!/usr/bin/env python3
+"""
+Top students
+"""
 
-db.school.find({name: {"$regex": /^Holberton/}})
+
+def top_students(mongo_collection):
+    """
+    returns all students sorted by average score
+    :param mongo_collection:
+    :return:
+    """
+    return mongo_collection.aggregate([
+        {"$project": {
+            "name": "$name",
+            "averageScore": {"$avg": "$topics.score"}
+        }},
+        {"$sort": {"averageScore": -1}}
+    ])
