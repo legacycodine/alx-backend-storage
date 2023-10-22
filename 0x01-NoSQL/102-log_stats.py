@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Log stats
+Improve 12-log_stats.py by adding the top 10 of the most present IPs
 """
 from pymongo import MongoClient
 
 
 def log_stats():
-    """ log_stats.
+    """ the collection nginx of the database logs:
     """
     client = MongoClient('mongodb://127.0.0.1:27017')
     logs_collection = client.logs.nginx
